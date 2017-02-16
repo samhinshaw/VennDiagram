@@ -1,0 +1,8 @@
+library(shiny)
+library(shinyjs)
+library(ggplot2)
+library(dplyr)
+library(scales)
+library(VennDiagram)
+library(gplots)
+library(readr)
