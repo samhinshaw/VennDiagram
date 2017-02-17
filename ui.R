@@ -1,4 +1,3 @@
-# bcl <- read.csv("bcl-data.csv", stringsAsFactors = FALSE)
 fluidPage(theme = "bootstrap.css",
 					useShinyjs(),
 					tags$head(tags$title("Sam's Venn Diagrams")),
@@ -9,7 +8,7 @@ fluidPage(theme = "bootstrap.css",
 			hr(),
 			fileInput('userdata', 'Please upload the data you wish to make a venn diagram of!',
 								accept = c('text/csv', 
-												 'text/comma-separated-values,text/plain', 
+														 'text/comma-separated-values,text/plain', 
 												 '.csv')),
 			uiOutput("columnSelect_1"),
 			# checkboxGroupInput('columns_1', 'Which columns do you wish to use for your comparisons?', choices = character(0), selected = character(0)),
@@ -18,7 +17,6 @@ fluidPage(theme = "bootstrap.css",
 								accept = c('text/csv', 
 													 'text/comma-separated-values,text/plain', 
 													 '.csv')),
-			"If you have a second dataset you wish to use, please upload it here",
 			hr(),
 			uiOutput("columnSelect_2"),
 			# checkboxGroupInput('columns_2', 'Which columns do you wish to use for your comparisons?', choices = character(0), selected = character(0)),
@@ -27,13 +25,20 @@ fluidPage(theme = "bootstrap.css",
 			"At the current time, uploading spreadsheets with many columns is untested"
 )),
 		div(class = "mainpanel", mainPanel(
-			textOutput("theColNames"), 
+			div(class ="maincontent",
+					div(class = "CheckResults",
+				"Check here to make sure you've selected the correct columns!",
+				tableOutput("theCols_1"), tableOutput("theCols_2")
+					),
+				div(class = "VennDiagram",
+						plotOutput("OurVenn", width = "400px", height = "400px")
+				)
 			
 			
 			
-			
-			hr(),
-			div(class = "footer", "CSS Theme 'Cosmo' by", a("Thomas Park", href="http://github.com/thomaspark", target="_blank"), "at", a("bootswatch.com", href="http://bootswatch.com", target="_blank"))
+		),
+		hr(),
+		div(class = "footer", "CSS Theme 'Cosmo' by", a("Thomas Park", href="http://github.com/thomaspark", target="_blank"), "at", a("bootswatch.com", href="http://bootswatch.com", target="_blank"))
 		))
 	)
 )

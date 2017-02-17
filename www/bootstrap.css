@@ -1089,11 +1089,18 @@ html {
 }
 body {
   font-family: "Source Sans Pro", Calibri, Candara, Arial, sans-serif;
-  font-size: 15px;
+/*  font-size: 15px;
   line-height: 1.42857143;
-  color: #333333;
+  color: #333333;*/
+  /*margin:40px auto;*/
+  /*max-width:800px;*/
+  line-height: 1.6;
+  font-size:18px;
+  color: #444;
+  padding: 0 10px;
   background-color: #ffffff;
 }
+
 input,
 button,
 select,
@@ -1178,6 +1185,15 @@ hr {
 [role="button"] {
   cursor: pointer;
 }
+
+/*
+.sidebar:first-child{
+  position: relative;
+  top: 0px;
+  left: 0px;
+}
+*/
+
 h1,
 h2,
 h3,
@@ -1192,7 +1208,7 @@ h6,
 .h6 {
   font-family: "Source Sans Pro", Calibri, Candara, Arial, sans-serif;
   font-weight: 300;
-  line-height: 1.1;
+  /*line-height: 1.1;*/
   color: inherit;
 }
 h1 small,
@@ -1223,13 +1239,13 @@ h6 .small,
   line-height: 1;
   color: #999999;
 }
-h1,
-.h1,
+/*h1,
+.h1,*/
 h2,
 .h2,
 h3,
 .h3 {
-  margin-top: 21px;
+  margin-top: 0px;
   margin-bottom: 10.5px;
 }
 h1 small,
@@ -6944,12 +6960,30 @@ div.sidebar{
   /*float: left;*/
 }
 
-div.mainpanel{
+.mainpanel .maincontent{
   /*float: right;*/
+  /* placeholder div size */
+  height: 750px; 
+
+}
+
+.maincontent .CheckResults{
+  display: inline-block;
+}
+/*
+.maincontent .VennDiagram{
+  display: inline-block;
+}
+*/
+.mainpanel hr{
+  margin: 2px;
 }
 
 div.footer{
   /*display: fixed;*/
-  bottom: 10px;
+  /*bottom: 0px;*/
   text-align: center;
+  font-size: 12px;
+  padding: 0;
+  margin: 0;
 }
